@@ -1,0 +1,56 @@
+    ---------------------------------------------------
+    README.txt
+    ---------------------------------------------------
+     
+     
+    Facestealer v1.2
+     
+    by JimmyJohn
+     
+    NOTE!!!!
+    THIS PROGRAM "DOES" WORK, BUT
+    This is nothing close to a finished project ... and the code is still quite sloppy ... additionally I have tested
+    against very few platforms ... and here's why.
+     
+    Facestealer is just a proof of concept project, and not for sidejacking, Firesheep has already done that and done
+    it good.  The reason I wrote facestealer is because I wanted to prove that anyone could.  Before starting, I knew
+    no ruby and my last programming experience was years ago, and brief.  I think that alot of people are timid to
+    the idea that they too can write their own code to perform medium cool tricks.  I am far from any kind of
+    professional developer (just look at my code :).  So if I can write a sidejacking script, then so can you.  The
+    latest cool app not yet packaged for your distro and the source won't compile?  Give writing your own a try!
+    It'll be a cool experience, I promise.
+     
+    ---------------------------
+     
+     
+    For use only with permission from the owner of equipment residing on the target subnet.  Unauthorized use of this
+    script could be construed as unlawful, and result in fines or possible incarceration.  Please check with the local
+    network administrator and law before running this script.
+     
+    ---------------------------
+     
+    This is a script to test sidejacking potential on local subnets.  The script will attempt to ARP poison a victim
+    on the local subnet and then monitor all traffic until one of the specified sets of cookies is found.  It will
+    then save these cookies to a file formatted to what I've seen referred to as the "Netscape" cookie file format,
+    which can be utilized by applications such as Firefox with the Cookie Importer plug-in. Facebook and Twitter are
+    loaded as default targets, though alternate sets of cookies can be loaded into the "bolocookies.txt" file.
+     
+    syntax: facestealer {interface} {T|F} {T|F} [victim IP] [router IP]
+     
+    Argument 1: Specify the poisoning / listening interface
+    Argument 2: Verbose output?
+    Argument 3: Do you want to perform Arp Poisoning? (This is left as an option to give you the opportunity to handle
+                traffic monitoring on your own if so desired)
+    Argument 4: Specify the victim IP address (Only needed if Arp Poisoning)
+    Argument 5: Specify the router IP address (Only needed if Arp Poisoning)
+     
+     
+    Requirements: You must have the packetfu and pcaprub ruby gems installed.  This can be done with the following commands:
+     
+    gem install packetfu [--user-install]
+    gem install pcaprub [--user-install]
+     
+    The user install option seems to be required if using Back Track 5, as there seem to be path issues with where gems
+    are installed and where gems are sought in this distribution.
+     
+    This script has only been tested with ruby 1.9.2.
